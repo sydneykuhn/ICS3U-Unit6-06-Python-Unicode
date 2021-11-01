@@ -5,12 +5,11 @@
 # This program uses an associative array
 
 
-def split_string(word):
-    return [character for character in word]
-
-
 def format_input(user_input):
     # this function formats a string into hex
+    formatted_input = []
+    letter = ""
+    
     dictionary = {}
 
     # adding items
@@ -108,27 +107,23 @@ def format_input(user_input):
     dictionary["}"] = "0x7d"
     dictionary["~"] = "0x7e"
 
-    word_list = user_input.split()
-
-    formated_input = []
-    for word in word_list:
-        for character in split_string(word):
-            if character in dictionary.keys():
-                formated_input.append(dictionary[character])
+    for letter in user_input:
+            if letter in dictionary.keys():
+                formatted_input.append(dictionary[letter])
             else:
-                print("\nInvalid input entered, please try again.")
+                print("\nInvalid input, please try again.")
 
-    return formated_input
+    return formatted_input
 
 
 def main():
     # this function uses an associative array
-    formated_input = []
+    formatted_input = []
 
     user_input = input("Please enter a string to be translated into hex : ")
-    formated_input = format_input(user_input)
+    formatted_input = format_input(user_input)
 
-    print("\n{0} in hex is {1}".format(user_input, formated_input))
+    print("\n{0} in hex is {1}".format(user_input, formatted_input))
 
     print("\nDone.")
 
