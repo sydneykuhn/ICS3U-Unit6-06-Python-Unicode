@@ -9,7 +9,7 @@ def format_input(user_input):
     # this function formats a string into hex
     formatted_input = []
     letter = ""
-    
+
     dictionary = {}
 
     # adding items
@@ -108,10 +108,10 @@ def format_input(user_input):
     dictionary["~"] = "0x7e"
 
     for letter in user_input:
-            if letter in dictionary.keys():
-                formatted_input.append(dictionary[letter])
-            else:
-                print("\nInvalid input, please try again.")
+        if letter in dictionary.keys():
+            formatted_input.append(dictionary[letter])
+        else:
+            print("\nInvalid input, please try again.")
 
     return formatted_input
 
